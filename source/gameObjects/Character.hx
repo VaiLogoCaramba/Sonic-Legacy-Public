@@ -15,7 +15,7 @@ import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import meta.data.Section.SwagSection;
-#if MODS_ALLOWED
+#if sys
 import sys.io.File;
 import sys.FileSystem;
 #end
@@ -110,7 +110,7 @@ class Character extends FlxSprite
 	public static function getCharacterFile(character:String):CharacterFile{
 		var characterPath:String = 'characters/' + character + '.json';
 
-		#if MODS_ALLOWED
+		#if windows
 		var path:String = Paths.modFolders(characterPath);
 		if (!Paths.exists(path)) {
 			path = Paths.getPreloadPath(characterPath);
@@ -166,7 +166,7 @@ class Character extends FlxSprite
 				//sparrow
 				//packer
 				//texture
-				#if MODS_ALLOWED
+				#if windows
 				var modTxtToFind:String = Paths.modsTxt(json.image);
 				var txtToFind:String = Paths.getPath('images/' + json.image + '.txt', TEXT);
 
@@ -181,7 +181,7 @@ class Character extends FlxSprite
 					spriteType = "packer";
 				}
 
-				#if MODS_ALLOWED
+				#if windows
 				var modAnimToFind:String = Paths.modFolders('images/' + json.image + '/Animation.json');
 				var animToFind:String = Paths.getPath('images/' + json.image + '/Animation.json', TEXT);
 
