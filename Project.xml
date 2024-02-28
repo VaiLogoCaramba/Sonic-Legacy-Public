@@ -30,7 +30,7 @@
 	<window if="desktop" orientation="landscape" fullscreen="false" resizable="true" vsync="false"/>
 
 	<!--Mobile-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="0" height="0" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
 
 	<!--Switch-specific-->
 	<window if="switch" orientation="landscape" fullscreen="true" width="0" height="0" resizable="true" />
@@ -45,8 +45,8 @@
 	
 	<!-- PSYCH ENGINE CUSTOMIZATION -->
 	<!-- <define name="DISCORD_ALLOWED" if="desktop" /> -->
-	<define name="MODS_ALLOWED" if="desktop" />
-	<define name="LUA_ALLOWED" if="desktop" />
+	<define name="MODS_ALLOWED" if="desktop || android" />
+	<define name="LUA_ALLOWED" if="desktop || android" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="VIDEOS_ALLOWED" unless="32bits"/>
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
@@ -122,7 +122,7 @@
 	<!-- <assets path='example_mods' rename='mods' embed='false' if="MODS_ALLOWED"/> -->
 
 	<assets path="assets/fonts" embed='true'/>
-	
+	<assets path="assets/android" if="android"/>
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" version="5.2.2" />
