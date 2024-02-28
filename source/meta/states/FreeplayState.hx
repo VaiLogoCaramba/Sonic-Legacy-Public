@@ -19,7 +19,7 @@ import meta.states.*;
 import meta.states.substate.*;
 import meta.data.*;
 import gameObjects.*;
-#if MODS_ALLOWED
+#if sys
 import sys.FileSystem;
 #end
 
@@ -203,6 +203,9 @@ class FreeplayState extends MusicBeatState
 		text.setFormat(Paths.font("vcr.ttf"), size, FlxColor.WHITE, RIGHT);
 		text.scrollFactor.set();
 		add(text);
+		#if android
+		addVirtualPad(UP_DOWN, C_B_A);
+		#end
 		super.create();
 	}
 
