@@ -25,6 +25,7 @@ class InitState extends FlxState
         meta.data.scripts.FunkinHScript.init();
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
+	    
         #if MODS_ALLOWED
 		Paths.pushGlobalMods();
 		WeekData.loadTheFirstEnabledMod();
