@@ -15,7 +15,7 @@ import flixel.tweens.FlxEase;
 import flixel.util.FlxColor;
 import flixel.util.FlxSort;
 import meta.data.Section.SwagSection;
-#if MODS_ALLOWED
+#if sys
 import sys.io.File;
 import sys.FileSystem;
 #end
@@ -193,8 +193,8 @@ class FNFSprite extends FlxSprite
 			}
 
 			rawJson = Assets.getText(path);
+			return cast Json.parse(rawJson);
 		}
 
-		return cast Json.parse(rawJson);
 	}
 }
