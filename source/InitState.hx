@@ -25,10 +25,11 @@ class InitState extends FlxState
         meta.data.scripts.FunkinHScript.init();
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
-
+        #if MODS_ALLOWED
 		Paths.pushGlobalMods();
 		WeekData.loadTheFirstEnabledMod();
-
+                #end
+		
 		FlxG.game.focusLostFramerate = 60;
 		FlxG.sound.muteKeys = muteKeys;
 		FlxG.sound.volumeDownKeys = volumeDownKeys;
