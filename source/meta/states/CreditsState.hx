@@ -12,7 +12,7 @@ import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import meta.data.*;
 import gameObjects.*;
-#if MODS_ALLOWED
+#if sys
 import sys.FileSystem;
 import sys.io.File;
 #end
@@ -77,6 +77,9 @@ class CreditsState extends MusicBeatState
 		{
 			pushModCreditsToList(folder);
 		}
+		#end
+		#if android
+		addVirtualPad(UP_DOWN, B);
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
