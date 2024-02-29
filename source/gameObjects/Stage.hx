@@ -17,12 +17,7 @@ import meta.state.*;
 import meta.data.StageData.StageFile;
 
 
-#if MODS_ALLOWED
-import sys.FileSystem;
-import sys.io.File;
-#else
-import openfl.utils.Assets;
-#end
+
 
 class Stage extends FlxTypedGroup<FlxBasic>
 {
@@ -77,7 +72,7 @@ class Stage extends FlxTypedGroup<FlxBasic>
 			var baseFile = '$baseScriptFile.hscript';
 		#end
 
-			var files = [#if MODS_ALLOWED Paths.modFolders(baseFile), #end Paths.getPreloadPath(baseFile)];
+			var files =
 			for (file in files)
 			{
 				if (Paths.exists(file,TEXT))
