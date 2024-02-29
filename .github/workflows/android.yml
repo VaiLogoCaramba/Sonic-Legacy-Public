@@ -17,7 +17,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   buildAndroid:
-    name: buildAndroid
+    name: Sonic Legacy 11 Android Port
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -85,5 +85,5 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
-          name: MM v2 Android Build
+          name: Sonic Legacy 2011 Android Build
           path: export/release/android/bin/app/build/outputs/apk/debug
