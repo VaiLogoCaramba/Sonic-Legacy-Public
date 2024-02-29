@@ -10,6 +10,9 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxRect;
 import flixel.ui.FlxBar;
 import flixel.util.FlxSort;
+#if android
+import android.flixel.FlxVirtualPad;
+#end
 import flixel.util.FlxStringUtil;
 import flixel.group.FlxSpriteGroup;
 import flixel.input.keyboard.FlxKey;
@@ -854,6 +857,11 @@ class PlayState extends MusicBeatState
 			funkyScripts.push(script);
 		}
 		#end
+
+                #if android
+		addAndroidControls();
+		#end
+			
 		for (script in stage.hscriptArray){
 			hscriptArray.push(script);
 			funkyScripts.push(script);
@@ -1184,6 +1192,12 @@ class PlayState extends MusicBeatState
 			#end
 		}
 		#end*/
+
+                #if android
+		addAndroidControls();
+		androidControls.visible = true;
+		#end
+				
 		noteTypeMap.clear();
 		noteTypeMap = null;
 		eventPushedMap.clear();
