@@ -146,6 +146,10 @@ class PauseSubState extends MusicBeatSubstate
 
 		regenMenu();
 		cameras = [cam];
+
+	        #if android
+		addVirtualPad(UP_DOWN, A);
+	        #end
 	}
 
 	var holdTime:Float = 0;
