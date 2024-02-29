@@ -1,11 +1,11 @@
 package meta.data;
 
-#if MODS_ALLOWED
+#if sys
 import sys.io.File;
 import sys.FileSystem;
-#else
-import openfl.utils.Assets;
 #end
+import openfl.utils.Assets;
+
 import haxe.Json;
 import haxe.format.JsonParser;
 import meta.data.Song;
